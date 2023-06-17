@@ -1,8 +1,9 @@
 package ua.com.saienko.yaroslav.secretsantakotlin.domain.usecases
 
 import ua.com.saienko.yaroslav.secretsantakotlin.domain.repository.Repository
+import javax.inject.Inject
 
-class GetShuffleList(
+class GetShuffleListUseCase @Inject constructor(
     private val repository: Repository
 ) {
 

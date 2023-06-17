@@ -2,8 +2,10 @@
 <androidx.fragment.app.FragmentContainerView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_container"
+    android:id="@+id/fragment_container_for_step_2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.MainActivity"
-    tools:layout="@layout/fragment_step1"/>
+    tools:context=".presentation.ActivityStep2"
+    tools:layout="@layout/fragment_step2">
+
+</androidx.fragment.app.FragmentContainerView>
