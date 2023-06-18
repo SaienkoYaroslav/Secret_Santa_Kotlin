@@ -9,9 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import ua.com.saienko.yaroslav.secretsantakotlin.AppSanta
-import ua.com.saienko.yaroslav.secretsantakotlin.R
 import ua.com.saienko.yaroslav.secretsantakotlin.databinding.FragmentStep2Binding
-import ua.com.saienko.yaroslav.secretsantakotlin.di.Component
 import ua.com.saienko.yaroslav.secretsantakotlin.presentation.adapters.NamesAdapter
 import java.lang.RuntimeException
 import javax.inject.Inject
@@ -66,14 +64,17 @@ class Step2Fragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val listNames =
-            viewModel.transformStringToList(param1)
-        for (name in listNames) {
-            Log.d("Step2Fragment", "$name")
-        }
+        viewModel.initLd(param1)
+//        val listNames =
+//            viewModel.getTransformStringToList(param1)
+//        for (name in listNames) {
+//            Log.d("Step2Fragment", "$name")
+//        }
         val adapter = NamesAdapter()
         binding.recyclerViewNames.adapter = adapter
-        adapter.submitList(listNames)
+        viewModel.ld.observe(viewLifecycleOwner){
+            adapter.submitList(it)
+        }
     }
 
     override fun onDestroyView() {

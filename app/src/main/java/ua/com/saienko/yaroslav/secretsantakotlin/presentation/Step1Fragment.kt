@@ -29,7 +29,7 @@ class Step1Fragment : Fragment() {
     private val binding: FragmentStep1Binding
         get() = _binding ?: throw RuntimeException("FragmentStep1Binding == null")
 
-    lateinit var listNames: MutableList<String>
+//    lateinit var listNames: MutableList<String>
 
     override fun onAttach(context: Context) {
         component.inject(this)
@@ -53,11 +53,11 @@ class Step1Fragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.buttonGoToStep2.setOnClickListener {
             val stringNames = binding.editTextNamesOfParticipates.text.toString()
-            listNames =
-                viewModel.transformStringToList(stringNames)
-            for (name in listNames) {
-                Log.d("Step1Fragment", "$name")
-            }
+//            listNames =
+//                viewModel.transformStringToList(stringNames)
+//            for (name in listNames) {
+//                Log.d("Step1Fragment", "$name")
+//            }
             val intent = ActivityStep2.newIntent(requireActivity().application, stringNames)
             startActivity(intent)
         }

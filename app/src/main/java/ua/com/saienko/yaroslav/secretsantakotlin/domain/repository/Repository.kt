@@ -1,9 +1,12 @@
 package ua.com.saienko.yaroslav.secretsantakotlin.domain.repository
 
+import androidx.lifecycle.LiveData
+
 interface Repository {
 
-    fun transformStringToList(string: String): MutableList<String>
+    fun getTransformStringToList(string: String): MutableList<String>
 
     fun getShuffleList(list: List<String>): List<String>
+
 
 }
